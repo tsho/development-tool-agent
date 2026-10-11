@@ -244,7 +244,7 @@ def _run_version(version: str) -> list[dict]:
 def run_trulens_evaluation():
     """Run the AgentGPA evaluation for v1 and v2."""
     provider = os.getenv("LLM_PROVIDER", "cortex")
-    model = os.getenv("LLM_MODEL", "llama3.1-70b")
+    model = os.getenv("LLM_MODEL", "claude-sonnet-4-5")
 
     logger.info("=" * 60)
     logger.info("  AgentGPA Evaluation - Internal Developer Assistant")

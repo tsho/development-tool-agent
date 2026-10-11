@@ -45,7 +45,7 @@ def _complete_cortex(system_prompt: str, user_message: str) -> tuple[str, dict]:
             "(or ~/.snowflake/connections.toml with token)."
         )
 
-    model = os.getenv("LLM_MODEL", "llama3.1-70b")
+    model = os.getenv("LLM_MODEL", "claude-sonnet-4-5")
     url = (
         f"https://{account}.snowflakecomputing.com"
         "/api/v2/cortex/inference:complete"
