@@ -31,7 +31,7 @@ An LLM-based "Internal Developer Assistant" with 3 tools is evaluated in two ver
 
 | Dimension | Measures | Evaluation Method | AgentGPA Formal Metrics |
 |-----------|----------|-------------------|------------------------|
-| **Goal** | User's intent achieved? | LLM judge: answer vs expected | 1A Answer Correctness, 1B Answer Relevance |
+| **Goal** | User's intent achieved? | LLM judge: answer vs expected | 1A Answer Correctness |
 | **Plan** | Right tool selected? | LLM judge: tool appropriateness | 4B Tool Selection |
 | **Act** | Faithful to source data? | LLM judge: groundedness | 1C Groundedness |
 
@@ -40,7 +40,7 @@ An LLM-based "Internal Developer Assistant" with 3 tools is evaluated in two ver
 > 1C Groundedness, 2 Logical Consistency, 3 Execution Efficiency, 4A Plan Quality,
 > 4B Tool Selection, 5A Plan Adherence, 5B Tool Calling.
 
-All metrics scored 0.0–1.0 by **Snowflake Cortex** (`llama3.1-70b`) as LLM-as-Judge.
+All metrics scored 0.0–1.0 by **Snowflake Cortex** (`claude-sonnet-4-5`) as LLM-as-Judge.
 
 ## Architecture
 
@@ -52,7 +52,7 @@ Developer Query → LLM Router (Tool Selection Prompt)
 ```
 
 - LLM Router and Answer Generator use an **OpenAI-compatible REST API** via `src/llm_client.py`
-- Default provider: Snowflake Cortex REST API (`llama3.1-70b`) with Programmatic Access Token (PAT)
+- Default provider: Snowflake Cortex REST API (`claude-sonnet-4-5`) with Programmatic Access Token (PAT)
 - v1/v2 behavior controlled by different prompts (`src/prompts_v1.py`, `src/prompts_v2.py`)
 - v1 uses `data/documentation.json`, v2 uses `data/documentation_v2.json` (with coding standards)
 
@@ -84,7 +84,7 @@ Requires a [Programmatic Access Token (PAT)](https://docs.snowflake.com/en/user-
 
 ```bash
 LLM_PROVIDER=cortex
-LLM_MODEL=llama3.1-70b
+LLM_MODEL=claude-sonnet-4-5
 SNOWFLAKE_ACCOUNT=<account-identifier>
 SNOWFLAKE_TOKEN=<your-pat>
 ```

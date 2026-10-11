@@ -1,7 +1,7 @@
 [project]
 name = "demo-development-tool-agent"
 version = "0.1.0"
-description = "Deboxx Poland Demo - Internal Developer Assistant with AgentGPA evaluation"
+description = "Internal Developer Assistant with AgentGPA evaluation"
 requires-python = ">=3.11"
 dependencies = [
     "altair>=5",

@@ -129,7 +129,7 @@ flowchart LR
 
     st.caption(
         "LLM Router and Answer Generator are powered by Snowflake Cortex "
-        "(llama3.1-70b). Calculator results bypass the Answer Generator."
+        "(claude-sonnet-4-5). Calculator results bypass the Answer Generator."
     )
     st.divider()
 
@@ -211,7 +211,7 @@ flowchart LR
     # =========================================================
     st.header("2. Agent v2 - Feedback Loop Improvements")
 
-    st.markdown("**Issues identified by AgentGPA on Case 2:**")
+    st.markdown("**Issues identified by AgentGPA on Case 3:**")
     st.markdown(
         "1. Knowledge base missing internal coding standards "
         "→ LLM cannot find correct answer\n"
@@ -369,7 +369,7 @@ flowchart LR
     # Key takeaway
     st.markdown(
         """
-**Key Finding:** Case 2 (Python indentation rule) — v1 hallucinates PEP8
+**Key Finding:** Case 3 (Python indentation rule) — v1 hallucinates PEP8
 (4 spaces) because the doc is missing AND the prompt says "enrich."
 v2 fixes both: adds internal doc (2 spaces) + grounding constraint.
 """
@@ -466,11 +466,11 @@ v2 fixes both: adds internal doc (2 spaces) + grounding constraint.
         """
 | Dimension | Measures | Evaluation | Formal Metric |
 |-----------|----------|-----------|---------------|
-| **Goal** | User's intent achieved? | LLM: answer vs expected | 1A Answer Correctness, 1B Answer Relevance |
+| **Goal** | User's intent achieved? | LLM: answer vs expected | 1A Answer Correctness |
 | **Plan** | Right tool selected? | LLM: tool appropriateness | 4B Tool Selection |
 | **Act** | Faithful to source? | LLM: groundedness | 1C Groundedness |
 
-All metrics evaluated by **Snowflake Cortex** (llama3.1-70b) as LLM-as-Judge.
+All metrics evaluated by **Snowflake Cortex** (claude-sonnet-4-5) as LLM-as-Judge.
 """
     )
 
