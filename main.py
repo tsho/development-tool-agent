@@ -24,11 +24,11 @@ def demo():
 
     cases = [
         "What is the API rate limit?",
-        "What is the Python indentation rule in our codebase?",
         (
             "If our API handles 50 requests per second, "
             "how many requests can it handle in 30 minutes?"
         ),
+        "What is the Python indentation rule in our codebase?",
     ]
 
     for i, query in enumerate(cases, 1):
